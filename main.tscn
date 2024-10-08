@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://hcrgmevrvrhe"]
+
+[ext_resource type="PackedScene" uid="uid://cmv40kolmc62d" path="res://GUI.tscn" id="1_qhxgt"]
+[ext_resource type="PackedScene" uid="uid://cvildvogihgvu" path="res://nav_test.tscn" id="2_8sesj"]
+
+[node name="Main" type="Node"]
+
+[node name="GUI" parent="." instance=ExtResource("1_qhxgt")]
+
+[node name="NavTest" parent="." instance=ExtResource("2_8sesj")]

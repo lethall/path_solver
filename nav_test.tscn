@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvildvogihgvu"]
+[gd_scene load_steps=7 format=3 uid="uid://cvildvogihgvu"]
 
 [ext_resource type="Script" path="res://character_body_2d.gd" id="1_q2blt"]
 [ext_resource type="Texture2D" uid="uid://us7kgxv6js6t" path="res://icon.svg" id="2_fwaf2"]
@@ -11,7 +11,13 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1517, -759, -1143, -74
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgr33"]
 size = Vector2(85, 83)
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pua6n"]
+size = Vector2(76, 359)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ongqa"]
+size = Vector2(127, 141)
+
+[node name="NavTest" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(1456, 695)
@@ -25,12 +31,25 @@ position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_hgr33")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="CharacterBody2D"]
+debug_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("2_fwaf2")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(700, 460)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(84, 332.5)
+shape = SubResource("RectangleShape2D_pua6n")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(415.5, 203.5)
+shape = SubResource("RectangleShape2D_ongqa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 46.0
